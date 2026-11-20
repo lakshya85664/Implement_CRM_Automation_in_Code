@@ -1,0 +1,78 @@
+{
+    "result": {
+        "status": "completed",
+        "lead_id": "LEAD-CRM-001",
+        "normalized_email": "aarav@example.com",
+        "qualified": true,
+        "crm_record_id": "CRM-0001",
+        "owner": "senior_sales",
+        "follow_up_task_id": "FOLLOWUP-0001",
+        "reason": null,
+        "events": [
+            {
+                "event": "lead_normalized",
+                "details": {
+                    "lead_id": "LEAD-CRM-001"
+                }
+            },
+            {
+                "event": "lead_validated",
+                "details": {
+                    "lead_id": "LEAD-CRM-001"
+                }
+            },
+            {
+                "event": "lead_qualified",
+                "details": {
+                    "score": 90,
+                    "threshold": 70
+                }
+            },
+            {
+                "event": "owner_assigned",
+                "details": {
+                    "owner": "senior_sales"
+                }
+            },
+            {
+                "event": "crm_record_created",
+                "details": {
+                    "crm_record_id": "CRM-0001"
+                }
+            },
+            {
+                "event": "follow_up_created",
+                "details": {
+                    "follow_up_task_id": "FOLLOWUP-0001"
+                }
+            }
+        ]
+    },
+    "crm_records": [
+        {
+            "crm_record_id": "CRM-0001",
+            "lead_id": "LEAD-CRM-001",
+            "name": "Aarav Shah",
+            "email": "aarav@example.com",
+            "company": "Example Technologies",
+            "source": "website",
+            "score": 90,
+            "owner": "senior_sales",
+            "status": "qualified"
+        }
+    ],
+    "follow_up_tasks": [
+        {
+            "task_id": "FOLLOWUP-0001",
+            "crm_record_id": "CRM-0001",
+            "owner": "senior_sales",
+            "task_type": "contact_lead",
+            "status": "pending",
+            "due_in_days": 1
+        }
+    ],
+    "metrics": {
+        "crm_records_created": 1,
+        "follow_up_tasks_created": 1
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "success": [
+        {
+            "run_id": "RUN-CRM-401",
+            "event": "lead_validated",
+            "timestamp": 1795152108.5222502,
+            "details": {
+                "lead_id": "LEAD-401"
+            }
+        },
+        {
+            "run_id": "RUN-CRM-401",
+            "event": "lead_qualification_checked",
+            "timestamp": 1795152108.5222547,
+            "details": {
+                "qualified": true,
+                "score": 92
+            }
+        },
+        {
+            "run_id": "RUN-CRM-401",
+            "event": "owner_assigned",
+            "timestamp": 1795152108.5222583,
+            "details": {
+                "owner": "senior_sales"
+            }
+        },
+        {
+            "run_id": "RUN-CRM-401",
+            "event": "crm_record_created",
+            "timestamp": 1795152108.5222654,
+            "details": {
+                "crm_record_id": "CRM-0001"
+            }
+        },
+        {
+            "run_id": "RUN-CRM-401",
+            "event": "follow_up_created",
+            "timestamp": 1795152108.5222707,
+            "details": {
+                "follow_up_task_id": "FOLLOWUP-0001"
+            }
+        },
+        {
+            "run_id": "RUN-CRM-401",
+            "event": "workflow_completed",
+            "timestamp": 1795152108.5222723,
+            "details": {}
+        },
+        {
+            "run_id": "RUN-CRM-401",
+            "event": "workflow_measurement",
+            "timestamp": 1795152108.5222783,
+            "details": {
+                "duration_ms": 0.046
+            }
+        }
+    ],
+    "failure": [
+        {
+            "run_id": "RUN-CRM-402",
+            "event": "lead_validated",
+            "timestamp": 1795152108.52229,
+            "details": {
+                "lead_id": "LEAD-402"
+            }
+        },
+        {
+            "run_id": "RUN-CRM-402",
+            "event": "lead_qualification_checked",
+            "timestamp": 1795152108.5222936,
+            "details": {
+                "qualified": true,
+                "score": 88
+            }
+        },
+        {
+            "run_id": "RUN-CRM-402",
+            "event": "owner_assigned",
+            "timestamp": 1795152108.5222967,
+            "details": {
+                "owner": "senior_sales"
+            }
+        },
+        {
+            "run_id": "RUN-CRM-402",
+            "event": "dependency_timeout",
+            "timestamp": 1795152108.5223022,
+            "details": {
+                "next_action": "Inspect dependency status and review partial side effects"
+            }
+        },
+        {
+            "run_id": "RUN-CRM-402",
+            "event": "workflow_measurement",
+            "timestamp": 1795152108.522307,
+            "details": {
+                "duration_ms": 0.023
+            }
+        }
+    ]
+}

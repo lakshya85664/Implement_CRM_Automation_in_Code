@@ -1,0 +1,222 @@
+{
+    "timeout_recovery": {
+        "result": {
+            "status": "completed",
+            "action": "completed",
+            "failure_category": null,
+            "attempts": 3,
+            "crm_record_id": "CRM-0001",
+            "follow_up_task_id": "FOLLOWUP-0001",
+            "side_effects": 2,
+            "recovered_existing": false,
+            "next_action": "Verify the CRM record and scheduled follow-up.",
+            "trace": [
+                {
+                    "event": "attempt_started",
+                    "attempt": 1,
+                    "details": {
+                        "simulated_outcome": "timeout"
+                    }
+                },
+                {
+                    "event": "dependency_timeout",
+                    "attempt": 1,
+                    "details": {
+                        "phase": "before_commit"
+                    }
+                },
+                {
+                    "event": "retry_scheduled",
+                    "attempt": 1,
+                    "details": {
+                        "category": "timeout"
+                    }
+                },
+                {
+                    "event": "attempt_started",
+                    "attempt": 2,
+                    "details": {
+                        "simulated_outcome": "timeout"
+                    }
+                },
+                {
+                    "event": "dependency_timeout",
+                    "attempt": 2,
+                    "details": {
+                        "phase": "before_commit"
+                    }
+                },
+                {
+                    "event": "retry_scheduled",
+                    "attempt": 2,
+                    "details": {
+                        "category": "timeout"
+                    }
+                },
+                {
+                    "event": "attempt_started",
+                    "attempt": 3,
+                    "details": {
+                        "simulated_outcome": "success"
+                    }
+                },
+                {
+                    "event": "crm_side_effects_committed",
+                    "attempt": 3,
+                    "details": {
+                        "crm_record_id": "CRM-0001",
+                        "follow_up_task_id": "FOLLOWUP-0001"
+                    }
+                },
+                {
+                    "event": "crm_workflow_completed",
+                    "attempt": 3,
+                    "details": {}
+                }
+            ]
+        },
+        "crm_record_count": 1,
+        "follow_up_count": 1
+    },
+    "malformed_response": {
+        "result": {
+            "status": "needs_review",
+            "action": "needs_review",
+            "failure_category": "malformed_response",
+            "attempts": 1,
+            "crm_record_id": null,
+            "follow_up_task_id": null,
+            "side_effects": 0,
+            "recovered_existing": false,
+            "next_action": "Quarantine the response and request operator review.",
+            "trace": [
+                {
+                    "event": "attempt_started",
+                    "attempt": 1,
+                    "details": {
+                        "simulated_outcome": "malformed_response"
+                    }
+                },
+                {
+                    "event": "failure_classified",
+                    "attempt": 1,
+                    "details": {
+                        "category": "malformed_response"
+                    }
+                }
+            ]
+        },
+        "crm_record_count": 0,
+        "follow_up_count": 0
+    },
+    "permanent_failure": {
+        "result": {
+            "status": "needs_review",
+            "action": "needs_review",
+            "failure_category": "permanent",
+            "attempts": 1,
+            "crm_record_id": null,
+            "follow_up_task_id": null,
+            "side_effects": 0,
+            "recovered_existing": false,
+            "next_action": "Quarantine the response and request operator review.",
+            "trace": [
+                {
+                    "event": "attempt_started",
+                    "attempt": 1,
+                    "details": {
+                        "simulated_outcome": "permanent"
+                    }
+                },
+                {
+                    "event": "failure_classified",
+                    "attempt": 1,
+                    "details": {
+                        "category": "permanent"
+                    }
+                }
+            ]
+        },
+        "crm_record_count": 0,
+        "follow_up_count": 0
+    },
+    "timeout_after_commit": {
+        "result": {
+            "status": "completed",
+            "action": "completed",
+            "failure_category": "timeout",
+            "attempts": 1,
+            "crm_record_id": "CRM-0001",
+            "follow_up_task_id": "FOLLOWUP-0001",
+            "side_effects": 2,
+            "recovered_existing": true,
+            "next_action": "No further retry required; verify the CRM record.",
+            "trace": [
+                {
+                    "event": "attempt_started",
+                    "attempt": 1,
+                    "details": {
+                        "simulated_outcome": "timeout_after_commit"
+                    }
+                },
+                {
+                    "event": "crm_side_effects_committed",
+                    "attempt": 1,
+                    "details": {
+                        "crm_record_id": "CRM-0001",
+                        "follow_up_task_id": "FOLLOWUP-0001"
+                    }
+                },
+                {
+                    "event": "dependency_timeout",
+                    "attempt": 1,
+                    "details": {
+                        "phase": "after_commit"
+                    }
+                },
+                {
+                    "event": "retry_scheduled",
+                    "attempt": 1,
+                    "details": {
+                        "category": "timeout"
+                    }
+                },
+                {
+                    "event": "recovery_reconciled_existing_side_effects",
+                    "attempt": 1,
+                    "details": {
+                        "crm_record_id": "CRM-0001",
+                        "follow_up_task_id": "FOLLOWUP-0001"
+                    }
+                }
+            ]
+        },
+        "crm_record_count": 1,
+        "follow_up_count": 1
+    },
+    "duplicate_replay": {
+        "first_status": "completed",
+        "replay_result": {
+            "status": "duplicate_prevented",
+            "action": "duplicate_prevented",
+            "failure_category": "duplicate",
+            "attempts": 0,
+            "crm_record_id": "CRM-0001",
+            "follow_up_task_id": "FOLLOWUP-0001",
+            "side_effects": 0,
+            "recovered_existing": true,
+            "next_action": "Verify the original CRM record; do not resubmit.",
+            "trace": [
+                {
+                    "event": "duplicate_replay_prevented",
+                    "attempt": 0,
+                    "details": {
+                        "crm_record_id": "CRM-0001"
+                    }
+                }
+            ]
+        },
+        "crm_record_count": 1,
+        "follow_up_count": 1
+    }
+}
